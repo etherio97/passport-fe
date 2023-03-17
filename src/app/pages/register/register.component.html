@@ -1,0 +1,898 @@
+<div class="container p-5 mx-auto">
+  <form [formGroup]="formGroup">
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အမည် (မြန်မာ)</mat-label>
+        <input matInput type="text" formControlName="fullName" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အမည် (အင်္ဂလိပ်)</mat-label>
+        <input matInput type="text" formControlName="fullNameEn" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အခြားအမည် (မြန်မာ)</mat-label>
+        <input matInput type="text" formControlName="otherName" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အခြားအမည် (အင်္ဂလိပ်)</mat-label>
+        <input matInput type="text" formControlName="otherNameEn" />
+      </mat-form-field>
+    </div>
+
+    <hr />
+
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <p class="font-bold md:col-span-2">
+        အဖအချက်အလက်
+      </p>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အဖအမည်</mat-label>
+        <input matInput type="text" formControlName="fatherName" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လူမျိုး</mat-label>
+        <input matInput type="text" formControlName="fatherRace" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ဘာသာ</mat-label>
+        <input matInput type="text" formControlName="fatherReligion" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အလုပ်အကိုင်</mat-label>
+        <input matInput type="text" formControlName="fatherOccupation" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>နေရပ်လိပ်စာ</mat-label>
+        <input matInput type="text" formControlName="fatherAddress" />
+      </mat-form-field>
+    </div>
+
+    <hr />
+
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <p class="font-bold md:col-span-2">
+        အမိအချက်အလက်
+      </p>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အမိအမည်</mat-label>
+        <input matInput type="text" formControlName="motherName" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လူမျိုး</mat-label>
+        <input matInput type="text" formControlName="motherRace" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ဘာသာ</mat-label>
+        <input matInput type="text" formControlName="motherReligion" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အလုပ်အကိုင်</mat-label>
+        <input matInput type="text" formControlName="motherOccupation" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>နေရပ်လိပ်စာ</mat-label>
+        <input matInput type="text" formControlName="motherAddress" />
+      </mat-form-field>
+    </div>
+
+    <hr />
+
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <p class="font-bold md:col-span-2">
+        ကိုယ်ရေးကိုယ်တာအချက်အလက်
+      </p>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ထင်ရှားသည့်အမှတ်အသား</mat-label>
+        <input matInput type="text" formControlName="prominentSign" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>မွေးဖွားသည့်ရက်</mat-label>
+        <input matInput type="text" formControlName="dateOfBirth" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>မွေးဖွားသည့်အရပ်</mat-label>
+        <input matInput type="text" formControlName="placeOfBirth" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ကျား/မ</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="ကျား">ကျား</mat-option>
+          <mat-option value="မ">မ</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လက်ရှိအလုပ်အကိုင်</mat-label>
+        <input matInput type="text" formControlName="currentOccupation" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>နေရပ်လိပ်စာ</mat-label>
+        <input matInput type="text" formControlName="currentAddress" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ပညာအရည်အချင်း</mat-label>
+        <input matInput type="text" formControlName="educationLevel" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>နိုင်ငံသားစိစစ်ရေးကတ်ပြားအမှတ်</mat-label>
+        <input matInput type="text" formControlName="nrcNumber" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>အရပ်အမြင့်</mat-label>
+        <input matInput type="text" formControlName="height" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>မျက်လုံးအရောင်</mat-label>
+        <input matInput type="text" formControlName="eyeColor" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ဆံပင်အရောင်</mat-label>
+        <input matInput type="text" formControlName="hairColor" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လူမျိုး</mat-label>
+        <input matInput type="text" formControlName="race" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ကိုးကွယ်သည့်ဘာသာ</mat-label>
+        <input matInput type="text" formControlName="religion" />
+      </mat-form-field>
+    </div>
+
+    <hr />
+
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <p class="font-bold md:col-span-2">
+        ဇနီး/ခင်ပွန်းအချက်အလက်
+      </p>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ဇနီး/ခင်ပွန်းအမည်</mat-label>
+        <input matInput type="text" formControlName="partnerName" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လက်ရှိအလုပ်အကိုင်</mat-label>
+        <input matInput type="text" formControlName="partnerOccupation" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>နေရပ်လိပ်စာ</mat-label>
+        <input matInput type="text" formControlName="partnerAddress" />
+      </mat-form-field>
+    </div>
+
+    <hr />
+
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <p class="font-bold md:col-span-2">
+        အခြားအချက်အလက်
+      </p>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>သွားရောက်မည့်ကိစ္စ</mat-label>
+        <input matInput type="text" formControlName="reason" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လျှောက်ထားသည့်နိုင်ငံ</mat-label>
+        <input matInput type="text" formControlName="applyCountry" />
+      </mat-form-field>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          ပညာသင်ခဲ့သည့်ကျောင်းများ/အတန်း
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addSchool()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th colspan="2" class="p-2 border border-slate-300">ခုနှစ်</th>
+              <th colspan="2" class="p-2 border border-slate-300">အတန်း</th>
+              <th colspan="2" class="p-2 border border-slate-300">
+                တက္ကသိုလ်/ကောလိပ်/ကျောင်း
+              </th>
+            </tr>
+            <tr>
+              <th class="p-2 border border-slate-300">မှ</th>
+              <th class="p-2 border border-slate-300">ထိ</th>
+              <th class="p-2 border border-slate-300">မှ</th>
+              <th class="p-2 border border-slate-300">ထိ</th>
+              <th class="p-2 border border-slate-300">အမည်</th>
+              <th class="p-2 border border-slate-300">
+                မြို့နယ်/ရပ်ကွက်/ကျေးရွာ
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let school of schools" [formGroup]="school">
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="fromYear"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="toYear"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="fromClass"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="toClass"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="schoolName"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="schoolPlace"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ပြောင်းရွှေ့လုပ်ကိုင်ခဲ့သောဌာနများ</mat-label>
+        <input matInput type="text" formControlName="department" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လက်ရှိအဆင့်</mat-label>
+        <input matInput type="text" formControlName="position" />
+      </mat-form-field>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          လျှောက်ထားသူ ညီအစ်ကို/မောင်နှမ အရင်းအချာများ
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addSibling()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th class="p-2 border border-slate-300">အမည်</th>
+              <th class="p-2 border border-slate-300">တော်စပ်ပုံ</th>
+              <th class="p-2 border border-slate-300">အလုပ်အကိုင်</th>
+              <th class="p-2 border border-slate-300">နေရပ်လိပ်စာ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container
+              *ngFor="let sibling of siblings"
+              [formGroup]="sibling"
+            >
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="name"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="relationship"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="occupation"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="address"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          လျှောက်ထားသူ ဇနီး/ခင်ပွန်း၏ မိဘ
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addPartnerParent()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th class="p-2 border border-slate-300">အမည်</th>
+              <th class="p-2 border border-slate-300">အလုပ်အကိုင်</th>
+              <th class="p-2 border border-slate-300">နေရပ်လိပ်စာ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container
+              *ngFor="let partnerParent of partnerParents"
+              [formGroup]="partnerParent"
+            >
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="name"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="occupation"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="address"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          လျှောက်ထားသူ သား/သမီးများ
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addChild()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th class="p-2 border border-slate-300">အမည်</th>
+              <th class="p-2 border border-slate-300">အလုပ်အကိုင်</th>
+              <th class="p-2 border border-slate-300">နေရပ်လိပ်စာ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let child of children" [formGroup]="child">
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="name"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="occupation"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="address"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          လျှောက်ထားသူ ဖခင်၏ ညီအစ်ကို/မောင်နှမအရင်းအချာများ
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addFatherSibling()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th class="p-2 border border-slate-300">အမည်</th>
+              <th class="p-2 border border-slate-300">အလုပ်အကိုင်</th>
+              <th class="p-2 border border-slate-300">နေရပ်လိပ်စာ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container
+              *ngFor="let fatherSibling of fatherSiblings"
+              [formGroup]="fatherSibling"
+            >
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="name"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="occupation"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="address"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          လျှောက်ထားသူ မိခင်၏ ညီအစ်ကို/မောင်နှမအရင်းအချာများ
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addMotherSibling()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th class="p-2 border border-slate-300">အမည်</th>
+              <th class="p-2 border border-slate-300">အလုပ်အကိုင်</th>
+              <th class="p-2 border border-slate-300">နေရပ်လိပ်စာ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container
+              *ngFor="let motherSibling of motherSiblings"
+              [formGroup]="motherSibling"
+            >
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="name"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="occupation"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="address"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          လျှောက်ထားသူ ဇနီး/ခင်ပွန်း၏ ညီအစ်ကို/မောင်နှမအရင်းအချာများ
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addPartherSibling()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th class="p-2 border border-slate-300">အမည်</th>
+              <th class="p-2 border border-slate-300">အလုပ်အကိုင်</th>
+              <th class="p-2 border border-slate-300">နေရပ်လိပ်စာ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container
+              *ngFor="let motherSibling of motherSiblings"
+              [formGroup]="motherSibling"
+            >
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="name"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="occupation"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="address"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          ပြစ်မှု/တရားမမှုအရ အရေးယူခံရဘူးသူများ ဖြည့်စွက်ရန်
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addCrime()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th class="p-2 border border-slate-300">ပုဒ်မ</th>
+              <th class="p-2 border border-slate-300">ပြစ်ဒဏ်</th>
+              <th class="p-2 border border-slate-300">တရားရုံး</th>
+              <th class="p-2 border border-slate-300" colspan="2">
+                ပြစ်ဒဏ်ကာလ
+              </th>
+              <th class="p-2 border border-slate-300">ပြစ်ဒဏ်ကျအကျဥ်းထောင်</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let crime of crimes" [formGroup]="crime">
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="poteMa"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="pyitDan"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="taYarYone"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="fromDate"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="toDate"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="prision"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <p class="md:col-span-2">
+        ယခင်နိုင်ငံကူးလက်မှတ်လျှောက်ထားဖူးသူများ ဖြည့်စွက်ရန်
+      </p>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>နိုင်ငံကူးလက်မှတ်အမှတ်</mat-label>
+        <input matInput type="text" formControlName="passportNumber" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ထုတ်ပေးရက်စွဲ</mat-label>
+        <input matInput type="text" formControlName="issueDate" />
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လက်မှတ်အပ်ပါက အပ်သည့်နေရာ</mat-label>
+        <input matInput type="text" formControlName="returnPlace" />
+        <mat-hint>ရုံးအပ်၊ လေဆိပ်အပ်၊ လက်ဝယ်ရှိပါက ပူးတွဲတင်ပြရန်</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>လက်မှတ်အပ်ပါက ရက်စွဲ</mat-label>
+        <input matInput type="text" formControlName="returnDate" />
+      </mat-form-field>
+    </div>
+
+    <div class="pt-5">
+      <div class="flex justify-between">
+        <p>
+          နိုင်ငံရပ်ခြားတွင် ကာလရှည် သွားရောက်နေထိုင်ဘူးခြင်း ရှိ/မရှိ
+        </p>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            type="button"
+            (click)="addCountry()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 overflow-x-auto">
+        <table
+          class="w-full text-center border border-collapse table-auto border-slate-400"
+        >
+          <thead>
+            <tr>
+              <th class="p-2 border border-slate-300">ခုနှစ် မှ</th>
+              <th class="p-2 border border-slate-300">ခုနှစ် ထိ</th>
+              <th class="p-2 border border-slate-300">သွားရောက်သည့်ကိစ္စ</th>
+              <th class="p-2 border border-slate-300">နိုင်ငံ</th>
+              <th class="p-2 border border-slate-300">မှတ်ချက်</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container
+              *ngFor="let country of countries"
+              [formGroup]="country"
+            >
+              <tr>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="fromYear"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="toYear"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="reason"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="country"
+                  />
+                </td>
+                <td class="p-2 border border-slate-300">
+                  <input
+                    class="w-full px-3 py-2 border rounded"
+                    type="text"
+                    formControlName="remark"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid gap-5 pt-5 md:grid-cols-2">
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>ဖုန်းနံပါတ်</mat-label>
+        <input matInput type="text" formControlName="phoneNumber" />
+      </mat-form-field>
+    </div>
+
+    <div class="flex justify-center pt-5 pb-10">
+      <button mat-flat-button color="primary">
+        လျှောက်ထားမည်
+      </button>
+    </div>
+  </form>
+</div>
