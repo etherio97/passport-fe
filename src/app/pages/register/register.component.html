@@ -1,5 +1,5 @@
 <div class="container p-5 mx-auto">
-  <form [formGroup]="formGroup">
+  <form [formGroup]="formGroup" (ngSubmit)="submit()" *ngIf="!isSubmitted">
     <div class="grid gap-5 pt-5 md:grid-cols-2">
       <mat-form-field class="w-full" appearance="outline">
         <mat-label>အမည် (မြန်မာ)</mat-label>
@@ -101,7 +101,16 @@
 
       <mat-form-field class="w-full" appearance="outline">
         <mat-label>မွေးဖွားသည့်ရက်</mat-label>
-        <input matInput type="text" formControlName="dateOfBirth" />
+        <input
+          matInput
+          [matDatepicker]="dateOfBirth"
+          formControlName="dateOfBirth"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="dateOfBirth"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #dateOfBirth></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field class="w-full" appearance="outline">
@@ -895,4 +904,43 @@
       </button>
     </div>
   </form>
+
+  <div *ngIf="isSubmitted" class="flex flex-col items-center justify-center">
+    <h2 class="pb-2 text-xl font-bold text-center">
+      ရက်ချိန်းရယူမှုအောင်မြင်ပါသည်။
+    </h2>
+
+    <qrcode
+      [qrdata]="'Your data string'"
+      [width]="256"
+      [errorCorrectionLevel]="'M'"
+    ></qrcode>
+
+    <p class="pb-2 leading-loose text-center">
+      အမှတ်စဥ်မှာ <b>{{qrCode}}</b> ဖြစ်သည်။ အမှတ်စဥ်အား သေချာစွာသိမ်းဆည်းပါ။
+    </p>
+    <p class="leading-loose text-center">
+      ရက်ချိန်းမှာ <b>{{date}}</b> ဖြစ်သည်။
+    </p>
+  </div>
 </div>
+
+<ng-template #confirmModal>
+  <div class="pb-4 text-sm leading-loose">
+    <p>
+      မြန်မာနိုင်ငံကူးလက်မှတ်လျှောက်ထားရန်အတွက် အချက်အလက်များ မှန်ကန်ရှိ/မရှိ
+      အတည်ပြုပါ။
+    </p>
+  </div>
+  <mat-dialog-actions>
+    <div class="flex items-center justify-end w-full space-x-4">
+      <button mat-dialog-close mat-flat-button class="text-white bg-gray-400">
+        ပယ်ဖျက်မည်
+      </button>
+
+      <button mat-flat-button color="primary" (click)="confirmSubmit()">
+        အတည်ပြုမည်
+      </button>
+    </div>
+  </mat-dialog-actions>
+</ng-template>

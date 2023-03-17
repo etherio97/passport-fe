@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { cloneDeep } from 'lodash';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +29,17 @@ export class RegisterComponent implements OnInit {
 
   countries: FormGroup[] = [];
 
-  constructor(private fb: FormBuilder) {}
+  isSubmitted = false;
+
+  date = moment().add(7, 'day').format('DD-MM-yyyy');
+
+  qrCode = '';
+
+  @ViewChild('confirmModal') confirmModal!: TemplateRef<any>;
+
+  private _modal!: MatDialogRef<any>;
+
+  constructor(private fb: FormBuilder, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
@@ -70,6 +83,31 @@ export class RegisterComponent implements OnInit {
       returnDate: ['', []],
       phoneNumber: ['', [Validators.required]],
     });
+  }
+
+  submit() {
+    this._modal = this.dialog.open(this.confirmModal, {
+      width: '100%',
+      maxWidth: '420px',
+    });
+  }
+
+  confirmSubmit() {
+    this._modal.close();
+    let data = cloneDeep(this.formGroup.value);
+    data.schools = this.schools.map((item) => item.value);
+    data.siblings = this.siblings.map((item) => item.value);
+    data.partnerParents = this.partnerParents.map((item) => item.value);
+    data.children = this.children.map((item) => item.value);
+    data.fatherSiblings = this.fatherSiblings.map((item) => item.value);
+    data.motherSiblings = this.motherSiblings.map((item) => item.value);
+    data.partnerSiblings = this.partnerSiblings.map((item) => item.value);
+    data.crimes = this.crimes.map((item) => item.value);
+    data.countries = this.countries.map((item) => item.value);
+    console.log(data);
+    this.isSubmitted = true;
+    this.qrCode =
+      'MWD_' + moment().format('YYYY') + '_' + moment().format('MMDDHHss');
   }
 
   addSchool() {

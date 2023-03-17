@@ -11,12 +11,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MomentDateModule } from '@angular/material-moment-adapter';
+import { MatDialogModule } from '@angular/material/dialog';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RegisterComponent, NavbarComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    RegisterComponent,
+    NavbarComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,7 +35,9 @@ import { FooterComponent } from './components/footer/footer.component';
     MatSelectModule,
     MatButtonModule,
     MatDatepickerModule,
-    MomentDateModule,
+    MatMomentDateModule,
+    MatDialogModule,
+    QRCodeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

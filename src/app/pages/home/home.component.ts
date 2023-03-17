@@ -6,11 +6,9 @@ import * as moment from 'moment';
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
-  date!: string;
+  date = moment().add(7, 'day').format('DD-MM-yyyy');
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.date = moment().add(7, 'day').format('DD-MM-yyyy');
-  }
+  ngOnInit(): void {}
 }
