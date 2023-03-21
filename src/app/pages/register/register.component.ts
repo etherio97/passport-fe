@@ -3,12 +3,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { cloneDeep } from 'lodash';
 import * as moment from 'moment';
+import { RECAPTCHA_SITE_KEY } from 'src/app/app.config';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
 })
 export class RegisterComponent implements OnInit {
+  siteKey = RECAPTCHA_SITE_KEY;
+
+  recaptchaToken!: string;
+
   formGroup!: FormGroup;
 
   schools: FormGroup[] = [];
@@ -85,7 +90,15 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  resolveRecaptcha(ev: any) {
+    this.recaptchaToken = ev;
+    console.log(this.recaptchaToken);
+  }
+
   submit() {
+    if (!this.recaptchaToken) {
+      return;
+    }
     this._modal = this.dialog.open(this.confirmModal, {
       width: '100%',
       maxWidth: '420px',
@@ -104,6 +117,7 @@ export class RegisterComponent implements OnInit {
     data.partnerSiblings = this.partnerSiblings.map((item) => item.value);
     data.crimes = this.crimes.map((item) => item.value);
     data.countries = this.countries.map((item) => item.value);
+    data.recaptchaToken = this.recaptchaToken;
     console.log(data);
     this.isSubmitted = true;
     this.qrCode =

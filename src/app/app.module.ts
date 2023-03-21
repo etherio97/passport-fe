@@ -16,7 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { QRCodeModule } from 'angularx-qrcode';
-
+import { NgxTurnstileModule } from 'ngx-turnstile';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +38,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     MatMomentDateModule,
     MatDialogModule,
     QRCodeModule,
+    NgxTurnstileModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

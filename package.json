@@ -26,6 +26,8 @@
     "angularx-qrcode": "^14.0.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
+    "ng-recaptcha": "^10.0.0",
+    "ngx-turnstile": "0.0.7",
     "qrcode": "^1.5.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

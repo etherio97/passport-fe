@@ -898,6 +898,13 @@
       </mat-form-field>
     </div>
 
+    <ngx-turnstile
+      [siteKey]="siteKey"
+      (resolved)="resolveRecaptcha($event)"
+      theme="light"
+      [tabIndex]="0"
+    ></ngx-turnstile>
+
     <div class="flex justify-center pt-5 pb-10">
       <button mat-flat-button color="primary">
         လျှောက်ထားမည်
