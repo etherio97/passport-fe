@@ -108,6 +108,7 @@ export class RegisterComponent implements OnInit {
   confirmSubmit() {
     this._modal.close();
     let data = cloneDeep(this.formGroup.value);
+    data.dateOfBirth = moment(data.dateOfBirth).format('DD-MM-yyyy');
     data.schools = this.schools.map((item) => item.value);
     data.siblings = this.siblings.map((item) => item.value);
     data.partnerParents = this.partnerParents.map((item) => item.value);
@@ -118,7 +119,7 @@ export class RegisterComponent implements OnInit {
     data.crimes = this.crimes.map((item) => item.value);
     data.countries = this.countries.map((item) => item.value);
     data.recaptchaToken = this.recaptchaToken;
-    console.log(data);
+    console.log('data object', JSON.stringify(data));
     this.isSubmitted = true;
     this.qrCode =
       'MWD_' + moment().format('YYYY') + '_' + moment().format('MMDDHHss');
